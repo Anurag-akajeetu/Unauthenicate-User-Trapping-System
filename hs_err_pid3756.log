@@ -1,0 +1,358 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x047769fd, pid=3756, tid=5556
+#
+# JRE version: 7.0_17-b02
+# Java VM: Java HotSpot(TM) Client VM (23.7-b01 mixed mode, sharing windows-x86 )
+# Problematic frame:
+# C  [wpcap.dll+0x169fd]  pcap_next_ex+0x1d
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.sun.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x03d87c00):  JavaThread "AWT-EventQueue-0" [_thread_in_native, id=5556, stack(0x04300000,0x04350000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x00000224
+
+Registers:
+EAX=0x00000214, EBX=0x0434e3b8, ECX=0x0434e3c0, EDX=0x0434e3b8
+ESP=0x0434e380, EBP=0x0434e39c, ESI=0x00000000, EDI=0x0434e3c0
+EIP=0x047769fd, EFLAGS=0x00010212
+
+Top of Stack: (sp=0x0434e380)
+0x0434e380:   00000000 03d87d28 338949f8 0434ea14
+0x0434e390:   6460cc9e e1d09a4a fffffffe 0434e3f8
+0x0434e3a0:   04711a7a 00000000 0434e3b8 0434e3c0
+0x0434e3b0:   03d87c00 338949f8 00000214 0188a717
+0x0434e3c0:   03d87d28 0434e408 33895500 00000000
+0x0434e3d0:   0434e3dc 0434e400 0434e3d8 00000000
+0x0434e3e0:   0434e408 33895880 00000000 338949f8
+0x0434e3f0:   00000000 0434e408 0434e42c 0188345a 
+
+Instructions: (pc=0x047769fd)
+0x047769dd:   cc cc cc 55 8b ec 83 e4 f8 83 ec 0c 53 8b 5d 0c
+0x047769ed:   56 8b 75 08 8d 86 14 02 00 00 57 8b 7d 10 89 03
+0x047769fd:   83 be 24 02 00 00 00 89 44 24 10 89 7c 24 14 74
+0x04776a0d:   31 83 be 34 02 00 00 00 75 15 8b ce e8 82 cb ff 
+
+
+Register to memory mapping:
+
+EAX=0x00000214 is an unknown value
+EBX=0x0434e3b8 is pointing into the stack for thread: 0x03d87c00
+ECX=0x0434e3c0 is pointing into the stack for thread: 0x03d87c00
+EDX=0x0434e3b8 is pointing into the stack for thread: 0x03d87c00
+ESP=0x0434e380 is pointing into the stack for thread: 0x03d87c00
+EBP=0x0434e39c is pointing into the stack for thread: 0x03d87c00
+ESI=0x00000000 is an unknown value
+EDI=0x0434e3c0 is pointing into the stack for thread: 0x03d87c00
+
+
+Stack: [0x04300000,0x04350000],  sp=0x0434e380,  free space=312k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [wpcap.dll+0x169fd]  pcap_next_ex+0x1d
+C  [Jpcap.dll+0x1a7a]  Java_jpcap_JpcapCaptor_getPacket+0x4a
+j  jpcapnet.pkpirate.jButton2ActionPerformed(Ljava/awt/event/ActionEvent;)V+51
+j  jpcapnet.pkpirate.access$100(Ljpcapnet/pkpirate;Ljava/awt/event/ActionEvent;)V+2
+j  jpcapnet.pkpirate$2.actionPerformed(Ljava/awt/event/ActionEvent;)V+5
+j  javax.swing.AbstractButton.fireActionPerformed(Ljava/awt/event/ActionEvent;)V+84
+j  javax.swing.AbstractButton$Handler.actionPerformed(Ljava/awt/event/ActionEvent;)V+5
+j  javax.swing.DefaultButtonModel.fireActionPerformed(Ljava/awt/event/ActionEvent;)V+35
+j  javax.swing.DefaultButtonModel.setPressed(Z)V+117
+j  javax.swing.plaf.basic.BasicButtonListener.mouseReleased(Ljava/awt/event/MouseEvent;)V+35
+j  java.awt.Component.processMouseEvent(Ljava/awt/event/MouseEvent;)V+64
+j  javax.swing.JComponent.processMouseEvent(Ljava/awt/event/MouseEvent;)V+23
+j  java.awt.Component.processEvent(Ljava/awt/AWTEvent;)V+81
+j  java.awt.Container.processEvent(Ljava/awt/AWTEvent;)V+18
+j  java.awt.Component.dispatchEventImpl(Ljava/awt/AWTEvent;)V+581
+j  java.awt.Container.dispatchEventImpl(Ljava/awt/AWTEvent;)V+42
+j  java.awt.Component.dispatchEvent(Ljava/awt/AWTEvent;)V+2
+j  java.awt.LightweightDispatcher.retargetMouseEvent(Ljava/awt/Component;ILjava/awt/event/MouseEvent;)V+327
+j  java.awt.LightweightDispatcher.processMouseEvent(Ljava/awt/event/MouseEvent;)Z+139
+j  java.awt.LightweightDispatcher.dispatchEvent(Ljava/awt/AWTEvent;)Z+50
+j  java.awt.Container.dispatchEventImpl(Ljava/awt/AWTEvent;)V+12
+j  java.awt.Window.dispatchEventImpl(Ljava/awt/AWTEvent;)V+19
+j  java.awt.Component.dispatchEvent(Ljava/awt/AWTEvent;)V+2
+j  java.awt.EventQueue.dispatchEventImpl(Ljava/awt/AWTEvent;Ljava/lang/Object;)V+41
+j  java.awt.EventQueue.access$200(Ljava/awt/EventQueue;Ljava/awt/AWTEvent;Ljava/lang/Object;)V+3
+j  java.awt.EventQueue$3.run()Ljava/lang/Void;+12
+j  java.awt.EventQueue$3.run()Ljava/lang/Object;+1
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x12a34a]
+V  [jvm.dll+0x1d968e]
+V  [jvm.dll+0x12a3cd]
+V  [jvm.dll+0xd9d0a]
+C  [java.dll+0x102f]  Java_java_security_AccessController_doPrivileged__Ljava_security_PrivilegedAction_2Ljava_security_AccessControlContext_2+0x17
+j  java.security.ProtectionDomain$1.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;Ljava/security/AccessControlContext;)Ljava/lang/Object;+28
+j  java.security.ProtectionDomain$1.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+6
+j  java.awt.EventQueue$4.run()Ljava/lang/Void;+11
+j  java.awt.EventQueue$4.run()Ljava/lang/Object;+1
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x12a34a]
+V  [jvm.dll+0x1d968e]
+V  [jvm.dll+0x12a3cd]
+V  [jvm.dll+0xd9d0a]
+C  [java.dll+0x102f]  Java_java_security_AccessController_doPrivileged__Ljava_security_PrivilegedAction_2Ljava_security_AccessControlContext_2+0x17
+j  java.security.ProtectionDomain$1.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;Ljava/security/AccessControlContext;)Ljava/lang/Object;+28
+j  java.awt.EventQueue.dispatchEvent(Ljava/awt/AWTEvent;)V+73
+j  java.awt.EventDispatchThread.pumpOneEventForFilters(I)V+245
+j  java.awt.EventDispatchThread.pumpEventsForFilter(ILjava/awt/Conditional;Ljava/awt/EventFilter;)V+35
+j  java.awt.EventDispatchThread.pumpEventsForHierarchy(ILjava/awt/Conditional;Ljava/awt/Component;)V+11
+j  java.awt.EventDispatchThread.pumpEvents(ILjava/awt/Conditional;)V+4
+j  java.awt.EventDispatchThread.pumpEvents(Ljava/awt/Conditional;)V+3
+j  java.awt.EventDispatchThread.run()V+9
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x12a34a]
+V  [jvm.dll+0x1d968e]
+V  [jvm.dll+0x12a533]
+V  [jvm.dll+0x12a597]
+V  [jvm.dll+0xd306f]
+V  [jvm.dll+0x14a647]
+V  [jvm.dll+0x14a7b0]
+V  [jvm.dll+0x17ee89]
+C  [msvcr100.dll+0x5c6de]  endthreadex+0x3a
+C  [msvcr100.dll+0x5c788]  endthreadex+0xe4
+C  [kernel32.dll+0x4ed6c]  BaseThreadInitThunk+0x12
+C  [ntdll.dll+0x6377b]  RtlInitializeExceptionChain+0xef
+C  [ntdll.dll+0x6374e]  RtlInitializeExceptionChain+0xc2
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  jpcap.JpcapCaptor.getPacket()Ljpcap/packet/Packet;+0
+j  jpcapnet.pkpirate.jButton2ActionPerformed(Ljava/awt/event/ActionEvent;)V+51
+j  jpcapnet.pkpirate.access$100(Ljpcapnet/pkpirate;Ljava/awt/event/ActionEvent;)V+2
+j  jpcapnet.pkpirate$2.actionPerformed(Ljava/awt/event/ActionEvent;)V+5
+j  javax.swing.AbstractButton.fireActionPerformed(Ljava/awt/event/ActionEvent;)V+84
+j  javax.swing.AbstractButton$Handler.actionPerformed(Ljava/awt/event/ActionEvent;)V+5
+j  javax.swing.DefaultButtonModel.fireActionPerformed(Ljava/awt/event/ActionEvent;)V+35
+j  javax.swing.DefaultButtonModel.setPressed(Z)V+117
+j  javax.swing.plaf.basic.BasicButtonListener.mouseReleased(Ljava/awt/event/MouseEvent;)V+35
+j  java.awt.Component.processMouseEvent(Ljava/awt/event/MouseEvent;)V+64
+j  javax.swing.JComponent.processMouseEvent(Ljava/awt/event/MouseEvent;)V+23
+j  java.awt.Component.processEvent(Ljava/awt/AWTEvent;)V+81
+j  java.awt.Container.processEvent(Ljava/awt/AWTEvent;)V+18
+j  java.awt.Component.dispatchEventImpl(Ljava/awt/AWTEvent;)V+581
+j  java.awt.Container.dispatchEventImpl(Ljava/awt/AWTEvent;)V+42
+j  java.awt.Component.dispatchEvent(Ljava/awt/AWTEvent;)V+2
+j  java.awt.LightweightDispatcher.retargetMouseEvent(Ljava/awt/Component;ILjava/awt/event/MouseEvent;)V+327
+j  java.awt.LightweightDispatcher.processMouseEvent(Ljava/awt/event/MouseEvent;)Z+139
+j  java.awt.LightweightDispatcher.dispatchEvent(Ljava/awt/AWTEvent;)Z+50
+j  java.awt.Container.dispatchEventImpl(Ljava/awt/AWTEvent;)V+12
+j  java.awt.Window.dispatchEventImpl(Ljava/awt/AWTEvent;)V+19
+j  java.awt.Component.dispatchEvent(Ljava/awt/AWTEvent;)V+2
+j  java.awt.EventQueue.dispatchEventImpl(Ljava/awt/AWTEvent;Ljava/lang/Object;)V+41
+j  java.awt.EventQueue.access$200(Ljava/awt/EventQueue;Ljava/awt/AWTEvent;Ljava/lang/Object;)V+3
+j  java.awt.EventQueue$3.run()Ljava/lang/Void;+12
+j  java.awt.EventQueue$3.run()Ljava/lang/Object;+1
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+0
+j  java.security.ProtectionDomain$1.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;Ljava/security/AccessControlContext;)Ljava/lang/Object;+28
+j  java.security.ProtectionDomain$1.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+6
+j  java.awt.EventQueue$4.run()Ljava/lang/Void;+11
+j  java.awt.EventQueue$4.run()Ljava/lang/Object;+1
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+0
+j  java.security.ProtectionDomain$1.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;Ljava/security/AccessControlContext;)Ljava/lang/Object;+28
+j  java.awt.EventQueue.dispatchEvent(Ljava/awt/AWTEvent;)V+73
+j  java.awt.EventDispatchThread.pumpOneEventForFilters(I)V+245
+j  java.awt.EventDispatchThread.pumpEventsForFilter(ILjava/awt/Conditional;Ljava/awt/EventFilter;)V+35
+j  java.awt.EventDispatchThread.pumpEventsForHierarchy(ILjava/awt/Conditional;Ljava/awt/Component;)V+11
+j  java.awt.EventDispatchThread.pumpEvents(ILjava/awt/Conditional;)V+4
+j  java.awt.EventDispatchThread.pumpEvents(Ljava/awt/Conditional;)V+3
+j  java.awt.EventDispatchThread.run()V+9
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x03e03c00 JavaThread "TimerQueue" daemon [_thread_blocked, id=2240, stack(0x04d00000,0x04d50000)]
+  0x0040a800 JavaThread "DestroyJavaVM" [_thread_blocked, id=4712, stack(0x01590000,0x015e0000)]
+=>0x03d87c00 JavaThread "AWT-EventQueue-0" [_thread_in_native, id=5556, stack(0x04300000,0x04350000)]
+  0x03d87000 JavaThread "AWT-Windows" daemon [_thread_in_native, id=432, stack(0x03bd0000,0x03c20000)]
+  0x03d86800 JavaThread "AWT-Shutdown" [_thread_blocked, id=4968, stack(0x04090000,0x040e0000)]
+  0x03d82800 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=3708, stack(0x03fe0000,0x04030000)]
+  0x01852000 JavaThread "Service Thread" daemon [_thread_blocked, id=4228, stack(0x03950000,0x039a0000)]
+  0x0184c800 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=4512, stack(0x03cb0000,0x03d00000)]
+  0x0184b000 JavaThread "Attach Listener" daemon [_thread_blocked, id=1404, stack(0x03ac0000,0x03b10000)]
+  0x01848000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=4832, stack(0x039c0000,0x03a10000)]
+  0x01836800 JavaThread "Finalizer" daemon [_thread_blocked, id=1988, stack(0x03a70000,0x03ac0000)]
+  0x01831c00 JavaThread "Reference Handler" daemon [_thread_blocked, id=4596, stack(0x03b30000,0x03b80000)]
+
+Other Threads:
+  0x01830000 VMThread [stack: 0x03a10000,0x03a60000] [id=1724]
+  0x0186e800 WatcherThread [stack: 0x03c30000,0x03c80000] [id=5544]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 4928K, used 4150K [0x237a0000, 0x23cf0000, 0x28cf0000)
+  eden space 4416K,  93% used [0x237a0000, 0x23badaa8, 0x23bf0000)
+  from space 512K,   0% used [0x23bf0000, 0x23bf0000, 0x23c70000)
+  to   space 512K,   0% used [0x23c70000, 0x23c70000, 0x23cf0000)
+ tenured generation   total 10944K, used 0K [0x28cf0000, 0x297a0000, 0x337a0000)
+   the space 10944K,   0% used [0x28cf0000, 0x28cf0000, 0x28cf0200, 0x297a0000)
+ compacting perm gen  total 12288K, used 1032K [0x337a0000, 0x343a0000, 0x377a0000)
+   the space 12288K,   8% used [0x337a0000, 0x338a2368, 0x338a2400, 0x343a0000)
+    ro space 10240K,  45% used [0x377a0000, 0x37c273d8, 0x37c27400, 0x381a0000)
+    rw space 12288K,  54% used [0x381a0000, 0x3882acc8, 0x3882ae00, 0x38da0000)
+
+Card table byte_map: [0x03880000,0x03930000] byte_map_base: 0x03764300
+
+Polling page: 0x00370000
+
+Code Cache  [0x01880000, 0x01958000, 0x03880000)
+ total_blobs=387 nmethods=171 adapters=151 free_code_cache=31923Kb largest_free_block=32689472
+
+Compilation events (10 events):
+Event: 8.737 Thread 0x0184c800  167             java.lang.Object::equals (11 bytes)
+Event: 8.737 Thread 0x0184c800 nmethod 167 0x01951c08 code [0x01951d00, 0x01951d90]
+Event: 8.768 Thread 0x0184c800  168             java.util.HashSet::add (20 bytes)
+Event: 8.768 Thread 0x0184c800 nmethod 168 0x01951dc8 code [0x01951ed0, 0x01951f7c]
+Event: 8.867 Thread 0x0184c800  169   !         sun.awt.SunToolkit::flushPendingEvents (77 bytes)
+Event: 8.868 Thread 0x0184c800 nmethod 169 0x01951fc8 code [0x01952130, 0x01952308]
+Event: 8.868 Thread 0x0184c800  170   !         sun.awt.PostEventQueue::flush (84 bytes)
+Event: 8.869 Thread 0x0184c800 nmethod 170 0x01952548 code [0x01952660, 0x01952948]
+Event: 9.128 Thread 0x0184c800  171             java.awt.EventQueue::eventToCacheIndex (69 bytes)
+Event: 9.129 Thread 0x0184c800 nmethod 171 0x01952b08 code [0x01952c00, 0x01952d20]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 0.360 Thread 0x03d87c00 Threw 0x23891ef0 at C:\jdk7u2_32P\jdk7u17\hotspot\src\share\vm\prims\jvm.cpp:1166
+Event: 0.360 Thread 0x03d87c00 Threw 0x23893c58 at C:\jdk7u2_32P\jdk7u17\hotspot\src\share\vm\prims\jvm.cpp:1166
+Event: 0.489 Thread 0x03d87c00 Threw 0x238d85d0 at C:\jdk7u2_32P\jdk7u17\hotspot\src\share\vm\prims\jvm.cpp:1166
+Event: 0.492 Thread 0x03d87c00 Threw 0x238d9dc0 at C:\jdk7u2_32P\jdk7u17\hotspot\src\share\vm\prims\jvm.cpp:1166
+Event: 0.495 Thread 0x03d87c00 Threw 0x238db658 at C:\jdk7u2_32P\jdk7u17\hotspot\src\share\vm\prims\jvm.cpp:1166
+Event: 0.497 Thread 0x03d87c00 Threw 0x238dce30 at C:\jdk7u2_32P\jdk7u17\hotspot\src\share\vm\prims\jvm.cpp:1166
+Event: 0.499 Thread 0x03d87c00 Threw 0x238de618 at C:\jdk7u2_32P\jdk7u17\hotspot\src\share\vm\prims\jvm.cpp:1166
+Event: 0.500 Thread 0x03d87c00 Threw 0x238dfdf0 at C:\jdk7u2_32P\jdk7u17\hotspot\src\share\vm\prims\jvm.cpp:1166
+Event: 0.502 Thread 0x03d87c00 Threw 0x238e15d0 at C:\jdk7u2_32P\jdk7u17\hotspot\src\share\vm\prims\jvm.cpp:1166
+Event: 0.505 Thread 0x03d87c00 Threw 0x238e2e40 at C:\jdk7u2_32P\jdk7u17\hotspot\src\share\vm\prims\jvm.cpp:1166
+
+Events (10 events):
+Event: 9.510 loading class 0x03e0ac08
+Event: 9.510 loading class 0x03e0ac08 done
+Event: 9.511 loading class 0x03e0abd8
+Event: 9.511 loading class 0x03e0abd8 done
+Event: 9.512 loading class 0x03e0ac68
+Event: 9.512 loading class 0x03e0ac68 done
+Event: 9.513 loading class 0x03e0af98
+Event: 9.514 loading class 0x03e0af98 done
+Event: 9.516 loading class 0x03e0afc8
+Event: 9.516 loading class 0x03e0afc8 done
+
+
+Dynamic libraries:
+0x011e0000 - 0x0120f000 	C:\Program Files\Java\jdk1.7.0_17\bin\java.exe
+0x77b70000 - 0x77cac000 	C:\windows\SYSTEM32\ntdll.dll
+0x76620000 - 0x766f4000 	C:\windows\system32\kernel32.dll
+0x75ef0000 - 0x75f3b000 	C:\windows\system32\KERNELBASE.dll
+0x77d00000 - 0x77da0000 	C:\windows\system32\ADVAPI32.dll
+0x76ca0000 - 0x76d4c000 	C:\windows\system32\msvcrt.dll
+0x76c80000 - 0x76c99000 	C:\windows\SYSTEM32\sechost.dll
+0x76570000 - 0x76611000 	C:\windows\system32\RPCRT4.dll
+0x76160000 - 0x76229000 	C:\windows\system32\USER32.dll
+0x77cb0000 - 0x77cfe000 	C:\windows\system32\GDI32.dll
+0x76ae0000 - 0x76aea000 	C:\windows\system32\LPK.dll
+0x76de0000 - 0x76e7d000 	C:\windows\system32\USP10.dll
+0x73e80000 - 0x7401e000 	C:\windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.17514_none_41e6975e2bd6f2b2\COMCTL32.dll
+0x76d80000 - 0x76dd7000 	C:\windows\system32\SHLWAPI.dll
+0x76d50000 - 0x76d6f000 	C:\windows\system32\IMM32.DLL
+0x76450000 - 0x7651c000 	C:\windows\system32\MSCTF.dll
+0x690d0000 - 0x6918e000 	C:\Program Files\Java\jdk1.7.0_17\jre\bin\msvcr100.dll
+0x643a0000 - 0x646ec000 	C:\Program Files\Java\jdk1.7.0_17\jre\bin\client\jvm.dll
+0x6feb0000 - 0x6feb7000 	C:\windows\system32\WSOCK32.dll
+0x76120000 - 0x76155000 	C:\windows\system32\WS2_32.dll
+0x76d70000 - 0x76d76000 	C:\windows\system32\NSI.dll
+0x73cb0000 - 0x73ce2000 	C:\windows\system32\WINMM.dll
+0x77b60000 - 0x77b65000 	C:\windows\system32\PSAPI.DLL
+0x74130000 - 0x7413c000 	C:\Program Files\Java\jdk1.7.0_17\jre\bin\verify.dll
+0x72010000 - 0x72030000 	C:\Program Files\Java\jdk1.7.0_17\jre\bin\java.dll
+0x71ff0000 - 0x72003000 	C:\Program Files\Java\jdk1.7.0_17\jre\bin\zip.dll
+0x648f0000 - 0x64a32000 	C:\Program Files\Java\jdk1.7.0_17\jre\bin\awt.dll
+0x76e80000 - 0x76f0f000 	C:\windows\system32\OLEAUT32.dll
+0x76af0000 - 0x76c4c000 	C:\windows\system32\ole32.dll
+0x740c0000 - 0x74100000 	C:\windows\system32\uxtheme.dll
+0x739a0000 - 0x739b3000 	C:\windows\system32\dwmapi.dll
+0x75c80000 - 0x75c8c000 	C:\windows\system32\CRYPTBASE.dll
+0x76f10000 - 0x77b5a000 	C:\windows\system32\SHELL32.dll
+0x69020000 - 0x6904a000 	C:\Program Files\Java\jdk1.7.0_17\jre\bin\fontmanager.dll
+0x10000000 - 0x10038000 	C:\Program Files\Lenovo\Bluetooth Software\btmmhook.dll
+0x76090000 - 0x76113000 	C:\windows\system32\CLBCatQ.DLL
+0x73870000 - 0x7396b000 	C:\windows\system32\WindowsCodecs.dll
+0x75c30000 - 0x75c7c000 	C:\windows\system32\apphelp.dll
+0x6ffc0000 - 0x6fff1000 	C:\windows\system32\EhStorShell.dll
+0x76700000 - 0x7689d000 	C:\windows\system32\SETUPAPI.dll
+0x75fd0000 - 0x75ff7000 	C:\windows\system32\CFGMGR32.dll
+0x75ed0000 - 0x75ee2000 	C:\windows\system32\DEVOBJ.dll
+0x74320000 - 0x74415000 	C:\windows\system32\PROPSYS.dll
+0x6f7a0000 - 0x6fbaa000 	C:\PROGRA~1\MICROS~2\Office14\GROOVEEX.DLL
+0x73dd0000 - 0x73e73000 	C:\windows\WinSxS\x86_microsoft.vc90.crt_1fc8b3b9a1e18e3b_9.0.30729.6161_none_50934f2ebcb7eb57\MSVCR90.dll
+0x74030000 - 0x740be000 	C:\windows\WinSxS\x86_microsoft.vc90.crt_1fc8b3b9a1e18e3b_9.0.30729.6161_none_50934f2ebcb7eb57\MSVCP90.dll
+0x6ff90000 - 0x6ffbb000 	C:\windows\WinSxS\x86_microsoft.vc90.atl_1fc8b3b9a1e18e3b_9.0.30729.6161_none_51cd0a7abbe4e19b\ATL90.DLL
+0x6f390000 - 0x6f79f000 	C:\PROGRA~1\COMMON~1\MICROS~1\OFFICE14\Cultures\office.odf
+0x6eb20000 - 0x6f384000 	C:\PROGRA~1\MICROS~2\Office14\1033\GrooveIntlResource.dll
+0x6fd60000 - 0x6fd67000 	C:\Program Files\Internet Download Manager\IDMShellExt.dll
+0x6fcd0000 - 0x6fd40000 	C:\windows\system32\ntshrui.dll
+0x75a40000 - 0x75a59000 	C:\windows\system32\srvcli.dll
+0x70440000 - 0x7044b000 	C:\windows\system32\cscapi.dll
+0x741c0000 - 0x741ca000 	C:\windows\system32\slc.dll
+0x71f30000 - 0x71f44000 	C:\Program Files\Java\jdk1.7.0_17\jre\bin\net.dll
+0x75760000 - 0x7579c000 	C:\windows\system32\mswsock.dll
+0x75750000 - 0x75756000 	C:\windows\System32\wship6.dll
+0x71fe0000 - 0x71fee000 	C:\Program Files\Java\jdk1.7.0_17\jre\bin\nio.dll
+0x68fe0000 - 0x69011000 	C:\Program Files\Java\jdk1.7.0_17\jre\bin\t2k.dll
+0x039a0000 - 0x039a8000 	C:\Program Files\Internet Download Manager\idmmkb.dll
+0x04450000 - 0x04498000 	C:\Program Files\Elantech\ETDApix.dll
+0x73d70000 - 0x73dc1000 	C:\windows\system32\WINSPOOL.DRV
+0x75100000 - 0x75109000 	C:\windows\system32\VERSION.dll
+0x04710000 - 0x04738000 	C:\Windows\System32\Jpcap.dll
+0x04760000 - 0x047ac000 	C:\windows\system32\wpcap.dll
+0x042e0000 - 0x042f8000 	C:\windows\system32\packet.dll
+0x72b10000 - 0x72b2c000 	C:\windows\system32\iphlpapi.dll
+0x72b00000 - 0x72b07000 	C:\windows\system32\WINNSI.DLL
+0x71580000 - 0x71592000 	C:\windows\system32\dhcpcsvc.DLL
+0x71430000 - 0x7143d000 	C:\windows\system32\dhcpcsvc6.DLL
+0x04870000 - 0x04891000 	C:\Program Files\Lenovo\Bluetooth Software\btkeyind.dll
+0x73780000 - 0x7386b000 	C:\windows\system32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 
+java_command: jpcapnet.pkpirate
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+CLASSPATH=C:\Program Files\Java\jdk1.6.0\bin
+PATH=C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\Program Files\Java\jdk1.7.0_17\bin;C:\Program Files\Lenovo\Bluetooth Software\;C:\Program Files\Java\jdk1.7.0_17\bin
+USERNAME=l
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 37 Stepping 2, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 Build 7601 Service Pack 1
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 37 stepping 2, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, ht, tsc, tscinvbit
+
+Memory: 4k page, physical 3265036k(1723224k free), swap 6528316k(5031200k free)
+
+vm_info: Java HotSpot(TM) Client VM (23.7-b01) for windows-x86 JRE (1.7.0_17-b02), built on Mar  1 2013 05:04:36 by "java_re" with unknown MS VC++:1600
+
+time: Sat Mar 16 10:16:31 2013
+elapsed time: 9 seconds
+
